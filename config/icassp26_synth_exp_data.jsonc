@@ -1,0 +1,48 @@
+{
+    // Folder to save dataset
+    "dataset_path": "results_icassp26_synth_exp/data",
+    // Set to true to print out messages
+    "verbose": true,
+    // Random seed generator
+    "seed": 1111,
+
+    // Number of data trials
+    "data_trials": 10,
+
+    // Number of personality traits, or features
+    "num_feat": 1,
+
+    // For memory model, scalar constant for exponential decay memory function
+    "b":0.5,
+
+    // Relationship between psi and pi
+    "complexity_pi": "complex_incr",
+    // Relationship between psi and d
+    "complexity_d": "complex_incr",
+    // Affinity type between pairs of psis
+    "affinity_type":"simple_posaff",
+
+    // If true, generate model with memory. If false, use memoryless model.
+    "data_has_memory": true,
+    // If true, generate model with affinities. If false, use affinityless model.
+    "data_has_affinity": false,
+
+    "TRAIN":{
+        "num_speakers": [5,5,5,5,5,
+                        //  5,5,5,5,5,
+                        //  5,5,5,5,5,
+                         5,5,5,5,5],
+        "num_time": [[800],[800],[800],[800],[800],
+                    //  [600],[600],[600],[600],[600],
+                    //  [600],[600],[600],[600],[600],
+                     [800],[800],[800],[800],[800] ]
+    },
+    "VAL":{
+        "num_speakers": [5,5,5,5,5],
+        "num_time": [[800],[800],[800],[800],[800]]
+    },
+    "TEST":{
+        "num_speakers": [5,5,5,5,5],
+        "num_time": [[800],[800],[800],[800],[800]]
+    }
+}

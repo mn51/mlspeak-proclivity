@@ -1,0 +1,58 @@
+{
+    // Folder to save model
+    "model_path": "results_icassp26_synth_exp/model",
+    // Set to true to print out messages
+    "verbose": true,
+
+    // Number of model trials
+    "model_trials": 1,
+
+    "MODEL": {
+        // Random seed generator
+        "seed": 1111,
+        // True if using GPU.
+        "cuda": false,
+        // True if learning time-dependent speaking likelihoods d
+        "model_has_memory": true,
+        // True if learning decay function w
+        "learn_memory_function": true,
+        // True if learning pairwise affinities
+        "learn_affinity_function": false,
+        // Memory function for the model to use if not learning
+        "w":null,
+        // True if using LSTM for memory function, MLP if False
+        "lstm": false,
+        // Turn weights for computing loss
+        "weight_func":null,
+        // Hidden dimensions for neural network models
+        "hid_dim":10,
+        // Learning rate
+        "lr":1.0,
+        // Learning rate for memory function
+        "lr_decay":0.9,
+        // Learning rate for affinity model
+        "lr_affinity":1.0,
+        // How many turns before learning rate decays
+        "lr_patience":10,
+        // Number of iterations per model (only when model_decay=True)
+        "num_inner_iter":5,
+        // Number of total iterations
+        "num_iter":1000,
+        // Number of iterations between updating memory function
+        "decay_window":3,
+        // Number of iterations between updating affinity function
+        "affinity_window":1,
+        // Loss scaling type for training
+        "loss_scale":"group",
+        // Loss scaling type for testing
+        "test_loss_scale":"total",
+        // If True, training can terminate early
+        "terminate":true,
+        // Number of iterations before termination can occur
+        "burn_in_iter":400,
+        // How many plateau iterations to wait before termination
+        "patience":100,
+        // How many iterations before looking for smallest validation loss
+        "burn_in_valloss":300
+    }
+}
